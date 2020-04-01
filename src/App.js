@@ -1,15 +1,29 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import GlobalStyle from './styles/global';
+import './config/ReactotronConfig';
+
+// Global Styles
+import GlobalStyles from './styles/global';
+
+// Routes
 import Routes from './routes';
+
+// Components
+import Header from './components/Header';
+
+import store from './store';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-      <GlobalStyle />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+        <GlobalStyles />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
