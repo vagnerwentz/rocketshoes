@@ -32,7 +32,6 @@ class Home extends Component {
 
   handleAddProduct = id => {
     const { addToCartRequest } = this.props;
-
     /* Disparar uma action ao redux */
     addToCartRequest(id);
   };
